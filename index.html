@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <link rel='stylesheet' href='./pages/index.css'>
+  <title>Mesto</title>
+</head>
+<body>
+  <div class='page'>
+    <header class='header'>
+      <img class='header__logo' src='images/header__logo.svg' alt='Здесь должно быть лого'>
+    </header>
+
+    <main>
+      <section class='profile'>
+        <img class='profile__avatar' src='images/avatar.jpg' alt='Здесь должна быть картинка'>
+        <div class='profile__profile-info'>
+          <h1 class="profile__profile-info_name">Жак-Ив Кусто</h1>
+          <p class="profile__profile-info_job">Исследователь океана</p>
+          <input type="image" src='./images/edit-button.svg' class="profile__edit-button">
+        </div>
+        <input type="image" src='./images/add-button.svg' class="profile__add-button">
+      </section>
+
+      <section class="popup">
+        <div class='popup__container'>
+          <img src="./images/close-icon.svg" alt="Здесь должна быть иконка закрытия" class="popup__close">
+          <h2 class="popup__title">Редактировать профиль</h3>
+          <form class="popup__form">
+            <div class="popup__field">
+              <input type="text" name="name" class="popup__field_name" placeholder="Имя" minlength="2" maxlength="30" required>
+            </div>
+            <div class="popup__field">
+              <input type="text" name="job" class="popup__field_job" placeholder="Профессия" minlength="2" maxlength="30" required>
+            </div>
+              <button type='submit' class="popup__button">Сохранить</button>
+          </form>
+        </div>
+      </section>
+
+      <section class='elements'>
+        <div class='element'>
+          <img class='element__image' src='./images/element__image1.jpg' alt='Здесь должна быть фотография'>
+          <div class='element__info'>
+            <h2 class='element__name'>Карачаевск</h2>
+            <img class='element__like' src='./images/like.svg' alt='Здесь должна быть фотография'>
+          </div>
+        </div>
+
+        <div class='element'>
+          <img class='element__image' src='./images/element__image2.jpg' alt='Здесь должна быть фотография'>
+          <div class='element__info'>
+            <h2 class='element__name'>Гора Эльбрус</h2>
+            <img class='element__like' src='./images/like.svg' alt='Здесь должна быть фотография'>
+          </div>
+        </div>
+
+        <div class='element'>
+          <img class='element__image' src='./images/element__image3.jpg' alt='Здесь должна быть фотография'>
+          <div class='element__info'>
+            <h2 class='element__name'>Домбай</h2>
+            <img class='element__like' src='./images/like.svg' alt='Здесь должна быть фотография'>
+          </div>
+        </div>
+
+        <div class='element'>
+          <img class='element__image' src='./images/element__image4.jpg' alt='Здесь должна быть фотография'>
+          <div class='element__info'>
+            <h2 class='element__name'>Гора Эльбрус</h2>
+            <img class='element__like' src='./images/like.svg' alt='Здесь должна быть фотография'>
+          </div>
+        </div>
+
+        <div class='element'>
+          <img class='element__image' src='./images/element__image5.jpg' alt='Здесь должна быть фотография'>
+          <div class='element__info'>
+            <h2 class='element__name'>Домбай</h2>
+            <img class='element__like' src='./images/like.svg' alt='Здесь должна быть фотография'>
+          </div>
+        </div>
+
+        <div class='element'>
+          <img class='element__image' src='./images/element__image6.jpg' alt='Здесь должна быть фотография'>
+          <div class='element__info'>
+            <h2 class='element__name'>Карачаево-Черкесия</h2>
+            <img class='element__like' src='./images/like.svg' alt='Здесь должна быть фотография'>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <h2 class='footer'>&#169; 2020 Mesto Russia</h2>
+    </footer>
+  </div>
+  <script src="./scripts/index.js"></script>
+</body>
+</html>
