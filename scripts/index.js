@@ -4,8 +4,8 @@ const popupCloseButton = popup.querySelector('.popup__close');
 const formElement = document.querySelector('.popup__form');
 const fieldName = document.querySelector('.popup__field_name');
 const fieldJob = document.querySelector('.popup__field_job');
-const profileName = document.querySelector('.profile__profile-info_name');
-const profileJob = document.querySelector('.profile__profile-info_job');
+const profileName = document.querySelector('.profile__name');
+const profileJob = document.querySelector('.profile__job');
 
 let popupToggle = function () {
   popup.classList.toggle('popup_opened');
@@ -16,9 +16,6 @@ let popupToggle = function () {
   }
 }
 
-popupOpenButton.addEventListener('click', popupToggle);
-popupCloseButton.addEventListener('click', popupToggle);
-
 function formSubmitHandler (evt) {
   evt.preventDefault();
   profileName.textContent = fieldName.value;
@@ -26,4 +23,6 @@ function formSubmitHandler (evt) {
   popupToggle();
 }
 
+popupOpenButton.addEventListener('click', popupToggle);
+popupCloseButton.addEventListener('click', popupToggle);
 formElement.addEventListener('submit', formSubmitHandler);

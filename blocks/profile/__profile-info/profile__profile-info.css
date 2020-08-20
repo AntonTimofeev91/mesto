@@ -1,17 +1,56 @@
 .profile__profile-info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: grid;
   margin: 0;
   margin-left: 30px;
   padding: 0;
-  position: relative;
 }
 
 @media screen and (max-width: 999px) {
   .profile__profile-info {
     margin: 14px 0 0;
-    width: 100%;
-    align-items: center;
+    padding-left: 330px;
+    justify-self: end;
+  }
+}
+
+@media screen and (max-width: 899px) {
+  .profile__profile-info {
+    padding-left: 290px;
+  }
+}
+
+@media screen and (max-width: 799px) {
+  .profile__profile-info {
+    padding-left: 240px;
+  }
+}
+
+@media screen and (max-width: 699px) {
+  .profile__profile-info {
+    padding-left: 190px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .profile__profile-info {
+    padding-left: 150px;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .profile__profile-info {
+    padding-left: 110px;
+  }
+}
+
+@media screen and (max-width: 399px) {
+  .profile__profile-info {
+    padding-left: 60px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .profile__profile-info {
+    padding-left: 30px;
   }
 }

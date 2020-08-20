@@ -1,6 +1,11 @@
 .element__like {
   height: 18px;
+  background-color: white;
+  cursor: pointer;
+  padding: 0;
   transition: opacity 0.3s;
+  outline: none;
+  border: none;
 }
 
 .element__like:hover {

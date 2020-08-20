@@ -5,4 +5,12 @@
   height: 120px;
   margin: 0;
   padding: 0;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 999px) {
+  .profile__avatar {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
 }

@@ -2,16 +2,16 @@
   margin: 40px auto 0;
   max-width: 882px;
   width: 69%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  position: relative;
+  display: grid;
+  grid-template-columns: 120px max-content 1fr 1fr;
 }
 
 @media screen and (max-width: 999px) {
   .profile {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: 120px 1fr 86px;
+    justify-items: center;
+    align-items: start;
     width: 88%;
   }
 }

@@ -1,4 +1,4 @@
-.profile__profile-info_job {
+.footer__copyright {
   margin: 0;
   padding: 0;
   font-family: 'Inter', Arial, sans-serif;
@@ -6,14 +6,11 @@
   font-weight: normal;
   font-size: 18px;
   line-height: 22px;
-  color: #FFFFFF;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+  color: #545454;
 }
 
-@media screen and (max-width: 999px) {
-  .profile__profile-info_job {
+@media screen and (max-width: 620px) {
+  .footer__copyright {
     font-size: 14px;
     line-height: 17px;
   }

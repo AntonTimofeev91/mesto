@@ -1,14 +1,16 @@
 .profile__add-button {
+  background-color: black;
   border: 1px solid white;
+  margin: 0;
+  align-self: center;
+  justify-self: end;
   padding: 14px 64px;
   width: 150px;
   height: 50px;
   box-sizing: border-box;
-  position: absolute;
-  top: 35px;
-  right: 0;
   border-radius: 2px;
   transition: opacity 0.3s;
+  cursor: pointer;
 }
 
 .profile__add-button:hover {
@@ -18,9 +20,9 @@
 
 @media screen and (max-width: 999px) {
   .profile__add-button {
-    position: relative;
-    top: 0;
     width: 100%;
     margin: 36px 0 0;
+    grid-column-start: 1;
+    grid-column-end: 3;
   }
 }
