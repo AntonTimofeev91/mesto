@@ -87,18 +87,7 @@ const addItemToContainer = (name, link) => {
         const element = evt.target.closest('.element');
         element.remove();
     })
-
     elementContainer.prepend(placeElement);
-
-    const elementImage = document.querySelector('.element__image');
-    elementImage.addEventListener('click', event => {
-        const placeElement = event.target.closest('.element');
-        const elementPicture = placeElement.querySelector('.element__image').src;
-        const elementName = placeElement.querySelector('.element__name').textContent;
-        popupImage.querySelector('.popup-image__picture').src = elementPicture;
-        popupImage.querySelector('.popup-image__name').textContent = elementName;
-        popupImage.classList.add('popup-image_opened');
-    });
 }
 
 initialCards.forEach(cards => {
@@ -107,18 +96,29 @@ initialCards.forEach(cards => {
 
 addElementToForm.addEventListener('submit', evt => {
     evt.preventDefault()
-    const placeElementName = addElementToForm.querySelector('.popup-element__field_name').value;
-    const placeElementImage = addElementToForm.querySelector('.popup-element__field_image').value;
-    addItemToContainer(placeElementName, placeElementImage);
+    const placeElement = addElementToForm.querySelector('.popup-element__field_name').value;
+    const placeElement1 = addElementToForm.querySelector('.popup-element__field_image').value;
+    addItemToContainer(placeElement, placeElement1);
     popupElementToggle();
     addElementToForm.reset();
 });
 
+
+
 const popupImage = document.querySelector('.popup-image');
 const popupImageCloseButton = popupImage.querySelector('.popup-image__close');
 
+elementsImage.addEventListener('click', event => {
+    const element = event.target.closest('.element');
+    const elementPicture = element.querySelector('.element__image').src;
+    const elementName = element.querySelector('.element__name').textContent;
+    popupImage.querySelector('.popup-image__picture').src = elementPicture;
+    popupImage.querySelector('.popup-image__name').textContent = elementName;
+    popupImage.classList.add('popup-image_opened');
+});
+
 function closePopupImage() {
-    popupImage.classList.remove('popup-image_opened');
+    popupZoom.classList.remove('popup-image_opened');
 }
 
 popupImageCloseButton.addEventListener('click', closePopupImage);
