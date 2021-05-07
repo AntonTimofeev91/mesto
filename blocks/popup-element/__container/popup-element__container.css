@@ -1,4 +1,4 @@
-.popup__container {
+.popup-element__container {
   width: 430px;
   background-color: #fff;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
@@ -9,7 +9,7 @@
 }
 
 @media screen and (max-width: 540px) {
-  .popup__container {
+  .popup-element__container {
     width: calc(100% - 70px);
     padding: 34px 16px;
   }

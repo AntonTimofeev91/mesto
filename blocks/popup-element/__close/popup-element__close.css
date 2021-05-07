@@ -1,4 +1,4 @@
-.popup__close {
+.popup-element__close {
   height: 32px;
   width: 32px;
   background-color: #11ffee00;
@@ -11,6 +11,6 @@
   outline: none;
 }
 
-.popup__close:hover {
+.popup-element__close:hover {
   opacity: 0.6;
 }
