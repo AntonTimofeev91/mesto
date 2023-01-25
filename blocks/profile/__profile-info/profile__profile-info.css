@@ -45,12 +45,6 @@
 
 @media screen and (max-width: 399px) {
   .profile__profile-info {
-    padding-left: 60px;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .profile__profile-info {
-    padding-left: 30px;
+    padding-left: 45px;
   }
 }
