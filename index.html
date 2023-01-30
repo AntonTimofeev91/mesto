@@ -30,7 +30,7 @@
       <section class="elements">
         <template class ="element-template">
           <article class="element">
-            <img class="element__image" src="#" alt="Здесь должна быть фотография">
+            <img class="element__image" src="#" alt="#">
             <button class="element__remove-button" type="reset"></button>
             <div class="element__info">
               <h2 class="element__name"></h2>
@@ -45,38 +45,38 @@
       <p class="footer__copyright">&#169; 2023 Mesto Russia</p>
     </footer>
 
-    <div class="popup">
-      <div class="popup__container">
-        <button type="button" class="popup__close" >
+    <div class="popup popup-profile">
+      <div class="popup-profile__container">
+        <button type="button" class="popup__close popup-profile__close" >
           <img src="./images/close-icon.svg" class="popup__close-icon" alt="Здесь должна быть кнопка закрытия">
         </button>
-        <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="popup__form" name="info">
-          <input type="text" name="name" class="popup__field popup__field_info_name" placeholder="Имя" minlength="2" maxlength="30" required>
-          <input type="text" name="job" class="popup__field popup__field_info_job" placeholder="Профессия" minlength="2" maxlength="30" required>
+        <h2 class="popup-profile__title">Редактировать профиль</h2>
+        <form class="popup__form popup-profile__form" name="info">
+          <input type="text" name="name" class="popup__field popup-profile__field_info_name" placeholder="Имя" minlength="2" maxlength="30" required>
+          <input type="text" name="job" class="popup__field popup-profile__field_info_job" placeholder="Профессия" minlength="2" maxlength="30" required>
           <button type="submit" class="popup__button">Сохранить</button>
         </form>
       </div>
     </div>
 
-    <div class="popup-element">
+    <div class="popup popup-element">
       <div class="popup-element__container">
-        <button type="button" class="popup-element__close" >
-          <img src="./images/close-icon.svg" class="popup-element__close-icon" alt="Здесь должна быть кнопка закрытия">
+        <button type="button" class="popup__close popup-element__close" >
+          <img src="./images/close-icon.svg" class="popup__close-icon" alt="Здесь должна быть кнопка закрытия">
         </button>
         <h2 class="popup-element__title">Новое место</h2>
-        <form class="popup-element__form" name="info">
-          <input type="text" class="popup-element__field popup-element__field_name" placeholder="Название" name="name">
-          <input type="url" class="popup-element__field popup-element__field_image" placeholder="Ссылка на картинку" name="image">
-          <button type="submit" class="popup-element__button">Создать</button>
+        <form class="popup__form popup-element__form" name="info">
+          <input type="text" class="popup__field popup-element__field_name" placeholder="Название" name="name">
+          <input type="url" class="popup__field popup-element__field_image" placeholder="Ссылка на картинку" name="image">
+          <button type="submit" class="popup__button">Создать</button>
         </form>
       </div>
     </div>
 
-    <div class="popup-image">
+    <div class="popup popup-image">
       <div class="popup-image__container">
-        <button type="button" class="popup-image__close">
-          <img src="./images/close-icon.svg"  class="popup-image__close-icon" alt="Здесь должна быть кнопка закрытия">
+        <button type="button" class="popup__close popup-image__close">
+          <img src="./images/close-icon.svg"  class="popup__close-icon" alt="Здесь должна быть кнопка закрытия">
         </button>
         <img class="popup-image__picture" alt="Здесь должна быть увеличенная картинка" src="./images/close-icon.svg">
         <h2 class="popup-image__name"></h2>
