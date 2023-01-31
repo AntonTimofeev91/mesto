@@ -38,17 +38,6 @@ function handleProfileFormSubmit (event) {
   closePopup(popupProfile);
 }
 
-// Обработчки события
-popupProfileOpenButton.addEventListener('click', () => {
-  openPopup(popupProfile);
-  nameInput.value = profileName.textContent;
-  jobInput.value = profileJob.textContent;
- });
-popupProfileCloseButton.addEventListener('click', () => {
-  closePopup(popupProfile)
- });
-popupProfileForm.addEventListener('submit', handleProfileFormSubmit);
-
 // 6 карточек из "коробки"
 const initialCards = [
   {
@@ -104,9 +93,6 @@ function createElement(name, link) {
     popupImageName.textContent = elementName;
     popupImagePicture.alt = elementName;
     openPopup(popupImage);
-    popupImageCloseButton.addEventListener('click', () => {
-      closePopup(popupImage)
-    }); 
   });
 
   return element;
@@ -123,15 +109,32 @@ function handleElementFormSubmit (event) {
   event.preventDefault();
   const newCard = createElement(popupElementNameInput.value, popupElementImageInput.value);
   elementContainer.prepend(newCard);
-  //closePopupElement();
   closePopup(popupElement);
   popupElementForm.reset()
 }
 
+// Навешиваем обработчики
+popupProfileOpenButton.addEventListener('click', () => {
+  openPopup(popupProfile);
+  nameInput.value = profileName.textContent;
+  jobInput.value = profileJob.textContent;
+ });
+
 popupElementOpenButton.addEventListener('click', () => {
   openPopup(popupElement)
-})
+});
+
+popupProfileCloseButton.addEventListener('click', () => {
+  closePopup(popupProfile)
+ });
+
+popupImageCloseButton.addEventListener('click', () => {
+  closePopup(popupImage)
+}); 
+
 popupElementCloseButton.addEventListener('click', () => {
   closePopup(popupElement)
-})
+});
+
+popupProfileForm.addEventListener('submit', handleProfileFormSubmit);
 popupElementForm.addEventListener('submit', handleElementFormSubmit);
