@@ -3,16 +3,16 @@ const popupProfile = document.querySelector('.popup-profile');
 const popupProfileOpenButton = document.querySelector('.profile__edit-button');
 const popupProfileCloseButton = popupProfile.querySelector('.popup-profile__close');
 const popupProfileForm = document.querySelector('.popup-profile__form');
-const nameInput = document.querySelector('.popup-profile__field-info-name');
-const jobInput = document.querySelector('.popup-profile__field-info-job');
+const nameInput = document.querySelector('.popup-profile__input-info-name');
+const jobInput = document.querySelector('.popup-profile__input-info-job');
 const profileName = document.querySelector('.profile__name');
 const profileJob = document.querySelector('.profile__job');
 const popupElement = document.querySelector('.popup-element');
 const popupElementOpenButton = document.querySelector('.profile__add-button');
 const popupElementCloseButton = document.querySelector('.popup-element__close');
 const popupElementForm = document.querySelector('.popup-element__form');
-const popupElementImageInput = document.querySelector('.popup-element__field-image');
-const popupElementNameInput = document.querySelector('.popup-element__field-name');
+const popupElementImageInput = document.querySelector('.popup-element__input-image');
+const popupElementNameInput = document.querySelector('.popup-element__input-name');
 const elementContainer = document.querySelector('.elements');
 const elementTemplate = elementContainer.querySelector('.element-template').content.querySelector('.element');
 const popupImage = document.querySelector('.popup-image');
@@ -138,3 +138,29 @@ popupElementCloseButton.addEventListener('click', () => {
 
 popupProfileForm.addEventListener('submit', handleProfileFormSubmit);
 popupElementForm.addEventListener('submit', handleElementFormSubmit);
+
+document.addEventListener('keyup', function (evt) {
+  if(evt.key === 'Escape') {
+    closePopup(popupElement);
+    closePopup(popupImage);
+    closePopup(popupProfile);
+  }
+}); 
+
+popupProfile.addEventListener('click', function(evt) {
+  if (!evt.target.closest('.popup-profile__container')) {
+    closePopup(popupProfile);
+  };
+});
+
+popupElement.addEventListener('click', function(evt) {
+  if (!evt.target.closest('.popup-element__container')) {
+    closePopup(popupElement);
+  };
+});
+
+popupImage.addEventListener('click', function(evt) {
+  if (!evt.target.closest('.popup-image__container')) {
+    closePopup(popupImage);
+  };
+});
