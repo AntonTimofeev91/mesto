@@ -1,15 +1,18 @@
+//Функция показа ошибки при прохождении валидации
 const showError = (formElement, inputElement, errorMessage) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.add('popup__input_type_error');
   errorElement.textContent = errorMessage;
 };
-  
+
+//Функция скрытия ошибки при прохождении валидации
 const hideError = (formElement, inputElement) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.remove('popup__input_type_error');
   errorElement.textContent = '';
 };
-  
+ 
+//
 const checkInputValidity = (formElement, inputElement) => {
   if (!inputElement.validity.valid) {
     showError(formElement, inputElement,inputElement.validationMessage);
@@ -49,12 +52,14 @@ function enableValidation() {
 
 enableValidation();
 
+
 function hasInvalidInput(inputList) {
   return inputList.some((inputElement) => {
     return !inputElement.validity.valid;
   });
 }; 
 
+//Функция активации и деактивации sabmit
 function toggleButtonState(inputList, buttonElement) {
   if (hasInvalidInput(inputList)) {
     buttonElement.classList.add('popup__button_disabled');
@@ -65,6 +70,7 @@ function toggleButtonState(inputList, buttonElement) {
   }
 }
 
+//Функция деактивации sabmit после создания карточки
 function disabledButton(formElement) {
   const buttonElement = formElement.querySelector('.popup__button');
   buttonElement.classList.add('popup__button_disabled');
