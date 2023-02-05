@@ -10,45 +10,45 @@ const settings = {
 function enableValidation(settings) {
   const formList = Array.from(document.querySelectorAll(settings.formSelector));
   formList.forEach((formElement) => {
+    const buttonElement = formElement.querySelector(settings.submitButtonSelector);
     formElement.addEventListener('submit', () => {
-      disabledButton(formElement, settings);
+      disabledButton(formElement, buttonElement, settings);
     });
     
-    setEventListeners(formElement, settings);
+    setEventListeners(formElement, buttonElement, settings);
   });
 }
 
 enableValidation(settings);
 
-function setEventListeners(formElement, settings) {
+function setEventListeners(formElement, buttonElement, settings) {
   const inputList = Array.from(formElement.querySelectorAll(settings.inputSelector));
-  const buttonElement = formElement.querySelector(settings.submitButtonSelector);
-  disabledButton(formElement, settings);
+  disabledButton(formElement, buttonElement, settings);
   inputList.forEach((inputElement) => {
     inputElement.addEventListener('input', function () {
-      checkInputValidity(formElement, inputElement);
+      checkInputValidity(formElement, inputElement, settings);
       toggleButtonState(inputList, formElement, buttonElement, settings);
     })
   })
 }
 
-const checkInputValidity = (formElement, inputElement) => {
+const checkInputValidity = (formElement, inputElement, settings) => {
   if (!inputElement.validity.valid) {
-    showError(formElement, inputElement,inputElement.validationMessage);
+    showError(formElement, inputElement, inputElement.validationMessage, settings);
   } else {
-    hideError(formElement, inputElement,);
+    hideError(formElement, inputElement, settings);
   }
 };
 
 //Функция показа ошибки при прохождении валидации
-const showError = (formElement, inputElement, errorMessage) => {
+const showError = (formElement, inputElement, errorMessage, settings) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.add(settings.inputErrorClass);
   errorElement.textContent = errorMessage;
 };
 
 //Функция скрытия ошибки при прохождении валидации
-const hideError = (formElement, inputElement) => {
+const hideError = (formElement, inputElement, settings) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.remove(settings.inputErrorClass);
   errorElement.textContent = '';
@@ -57,7 +57,7 @@ const hideError = (formElement, inputElement) => {
 //Функция активации и деактивации sabmit
 function toggleButtonState(inputList, formElement, buttonElement, settings) {
   if (hasInvalidInput(inputList)) {
-    disabledButton(formElement, settings);
+    disabledButton(formElement, buttonElement, settings);
   } else {
     buttonElement.classList.remove(settings.inactiveButtonClass);
     buttonElement.removeAttribute('disabled');
@@ -71,8 +71,7 @@ function hasInvalidInput(inputList) {
 }; 
 
 //Функция деактивации sabmit после создания карточки
-function disabledButton(formElement, settings) {
-  const buttonElement = formElement.querySelector(settings.submitButtonSelector);
+function disabledButton(formElement, buttonElement, settings) {
   buttonElement.classList.add(settings.inactiveButtonClass);
   buttonElement.setAttribute('disabled', 'disabled');
 }

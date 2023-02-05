@@ -24,6 +24,7 @@ const popupImageName = popupImage.querySelector('.popup-image__name');
 function openPopup(popup) {
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', closeByEsc);
+
 }
 
 // Функция закрытия попапа
@@ -32,6 +33,7 @@ function closePopup(popup) {
   document.addEventListener('keydown', closeByEsc);
 }
 
+//Функция закрытия попапа по кнопке Esc
 function closeByEsc(evt) {
   if (evt.key === 'Escape') {
     const openedPopup = document.querySelector('.popup_opened');
