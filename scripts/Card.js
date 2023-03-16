@@ -20,22 +20,26 @@ class Card {
 
   _deliteCard() {
     this._element.remove();
+    this._element = null;
   }
 
   _likeCard() {
-    this._element.querySelector('.element__like').classList.toggle('element__like_active');
+    this._likeButton.classList.toggle('element__like_active');
   }
 
   _setEventListeners() {
-    this._element.querySelector('.element__remove-button').addEventListener('click', () => {
+    this._removeButton = this._element.querySelector('.element__remove-button');
+    this._removeButton.addEventListener('click', () => {
       this._deliteCard();
     });
 
-    this._element.querySelector('.element__like').addEventListener('click', () => {
+    this._likeButton = this._element.querySelector('.element__like');
+    this._likeButton.addEventListener('click', () => {
       this._likeCard();
     });
 
-    this._element.querySelector('.element__image').addEventListener('click', () => {
+    this._cardImage = this._element.querySelector('.element__image');
+    this._cardImage.addEventListener('click', () => {
       handleCardClick(this._name, this._link);
     });
   }

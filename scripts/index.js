@@ -33,7 +33,7 @@ function openPopup(popup) {
 // Функция закрытия попапа
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
-  document.addEventListener('keydown', closeByEsc);
+  document.removeEventListener('keydown', closeByEsc);
 }
 
 //Функция закрытия попапа по кнопке Esc
@@ -75,7 +75,8 @@ function handleCardFormSubmit (event) {
   const newCard = createCard(inputValue);
   cardContainer.prepend(newCard);
   closePopup(popupCard);
-  popupCardForm.reset()
+  popupCardForm.reset();
+  validationCard.disabledButton();
 }
 
 // Функция увеличения карточки
