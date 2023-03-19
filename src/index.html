@@ -3,27 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./pages/index.css">
   <title>Mesto</title>
 </head>
 <body>
   <div class="page">
     <header class="header">
-      <img class="header__logo" src="images/header__logo.svg" alt="Здесь должно быть лого">
+      <img class="header__logo" src="<%=require('./images/header__logo.svg')%>" alt="Здесь должно быть лого">
     </header>
 
     <main>
       <section class="profile">
-        <img class="profile__avatar" src="images/avatar.jpg" alt="Здесь должна быть картинка">
+        <img class="profile__avatar" src="<%=require('./images/avatar.jpg')%>" alt="Здесь должна быть картинка">
         <div class="profile__profile-info">
           <h1 class="profile__name">Жак-Ив Кусто</h1>
           <p class="profile__job">Исследователь океана</p>
         </div>
         <button type="button" class="profile__edit-button">
-          <img src="./images/edit-button.svg" alt="Здесь должна быть кнопка">
+          <img src="<%=require('./images/edit-button.svg')%>" alt="Здесь должна быть кнопка">
         </button>
         <button type="button" class="profile__add-button">
-          <img src="./images/add-button.svg" class="profile__add-button-image" alt="Здесь должна быть кнопка">
+          <img src="<%=require('./images/add-button.svg')%>" class="profile__add-button-image" alt="Здесь должна быть кнопка">
         </button>
       </section>
 
@@ -34,7 +33,7 @@
             <button class="element__remove-button" type="reset"></button>
             <div class="element__info">
               <h2 class="element__name"></h2>
-              <button class="element__like" type="button"><img src="./images/like.svg" alt="Здесь должна быть кнопка"></button>
+              <button class="element__like" type="button"><img src="<%=require('./images/like.svg')%>" alt="Здесь должна быть кнопка"></button>
             </div>
           </article>
         </template>
@@ -46,9 +45,9 @@
     </footer>
 
     <div class="popup popup-profile">
-      <div class="popup-profile__container">
+      <div class="popup__container popup-profile__container">
         <button type="button" class="popup__close popup-profile__close" >
-          <img src="./images/close-icon.svg" class="popup__close-icon" alt="Здесь должна быть кнопка закрытия">
+          <img src="<%=require('./images/close-icon.svg')%>" class="popup__close-icon" alt="Здесь должна быть кнопка закрытия">
         </button>
         <h2 class="popup-profile__title">Редактировать профиль</h2>
         <form class="popup__form popup-profile__form" name="info">
@@ -62,15 +61,15 @@
     </div>
 
     <div class="popup popup-element">
-      <div class="popup-element__container">
+      <div class="popup__container popup-element__container">
         <button type="button" class="popup__close popup-element__close" >
-          <img src="./images/close-icon.svg" class="popup__close-icon" alt="Здесь должна быть кнопка закрытия">
+          <img src="<%=require('./images/close-icon.svg')%>" class="popup__close-icon" alt="Здесь должна быть кнопка закрытия">
         </button>
         <h2 class="popup-element__title">Новое место</h2>
         <form class="popup__form popup-element__form" name="info">
             <input type="text" id="name-element-imput" class="popup__input popup-element__input-name" placeholder="Название" name="name" minlength="2" maxlength="30" required>
             <span class="popup__error name-element-imput-error"></span>
-            <input type="url" id="image-elemeny-imput" class="popup__input popup-element__input-image" placeholder="Ссылка на картинку" name="image" required>
+            <input type="url" id="image-elemeny-imput" class="popup__input popup-element__input-image" placeholder="Ссылка на картинку" name="link" required>
             <span class="popup__error image-elemeny-imput-error"></span>
             <button type="submit" class="popup__button" disabled>Создать</button>
         </form>
@@ -78,16 +77,15 @@
     </div>
 
     <div class="popup popup-image">
-      <div class="popup-image__container">
+      <div class="popup__container popup-image__container">
         <button type="button" class="popup__close popup-image__close">
-          <img src="./images/close-icon.svg"  class="popup__close-icon" alt="Здесь должна быть кнопка закрытия">
+          <img src="<%=require('./images/close-icon.svg')%>"  class="popup__close-icon" alt="Здесь должна быть кнопка закрытия">
         </button>
-        <img class="popup-image__picture" alt="Здесь должна быть увеличенная картинка" src="./images/close-icon.svg">
+        <img class="popup-image__picture" alt="Здесь должна быть увеличенная картинка">
         <h2 class="popup-image__name"></h2>
       </div>
     </div>
   
   </div>
-  <script type="module" src="./scripts/index.js"></script>
 </body>
 </html>
