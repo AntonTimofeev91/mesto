@@ -1,5 +1,3 @@
-import { handleCardClick } from "../pages/index.js";
-
 class Card {
   constructor(data, templateSelector, handleCardClick) {
     this._name = data.name;
@@ -40,7 +38,7 @@ class Card {
 
     this._cardImage = this._element.querySelector('.element__image');
     this._cardImage.addEventListener('click', () => {
-      handleCardClick(this._name, this._link);
+      this._handleCardClick(this._name, this._link);
     });
   }
 

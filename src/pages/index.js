@@ -1,25 +1,25 @@
-import { initialCards } from '../initialCards.js';
 import Card from '../components/Card.js';
-import { settings } from '../settings.js';
+import { 
+  initialCards,
+  settings,
+  popupProfile,
+  popupProfileOpenButton,
+  popupProfileForm,
+  nameInput,
+  jobInput,
+  profileName,
+  profileJob,
+  popupCard,
+  popupCardOpenButton,
+  popupCardForm,
+  popupImage 
+} from '../utils/constants.js';
 import FormValidator from '../components/FormValidator.js';
 import Section from '../components/Section.js';
 import UserInfo from '../components/UserInfo.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 import PopupWithImage from '../components/PopupWithImage.js';
-import '../../pages/index.css';
-
-// Объявляем переменные 
-const popupProfile = document.querySelector('.popup-profile');
-const popupProfileOpenButton = document.querySelector('.profile__edit-button');
-const popupProfileForm = document.querySelector('.popup-profile__form');
-const nameInput = document.querySelector('.popup-profile__input-info-name');
-const jobInput = document.querySelector('.popup-profile__input-info-job');
-const profileName = document.querySelector('.profile__name');
-const profileJob = document.querySelector('.profile__job');
-const popupCard = document.querySelector('.popup-element');
-const popupCardOpenButton = document.querySelector('.profile__add-button');
-const popupCardForm = document.querySelector('.popup-element__form');
-const popupImage = document.querySelector('.popup-image');
+import './index.css';
 
 // Добавляем изначальные данные в профиль при открытии попапа
 const profileUserInfo = new UserInfo({
@@ -28,7 +28,7 @@ const profileUserInfo = new UserInfo({
 });
 
 // Добавляем данные в профиль вручную
-const profileForm = new PopupWithForm(popupProfile, (data) => {
+const profileForm = new PopupWithForm('.popup-profile', (data) => {
   profileUserInfo.setUserInfo(data);
 });
 profileForm.setEventListeners();
@@ -58,13 +58,13 @@ cardContainer.renderItems();
 
 // Функция создания карточки 
 function createCard(item) {
-  const card = new Card(item, '.element-template');
+  const card = new Card(item, '.element-template', handleCardClick);
   const cardElement = card.generateCard();
   return cardElement;
 }
 
 // Создаем карточку вручную
-const cardForm = new PopupWithForm(popupCard, (data) => {
+const cardForm = new PopupWithForm('.popup-element', (data) => {
   cardContainer.setItem(createCard(data));
   validationCard.disabledButton();
 });
@@ -76,7 +76,7 @@ popupCardOpenButton.addEventListener(`click`, () => {
 });
 
 // Открываем увеличенную версию картинки
-const popupWithImage = new PopupWithImage(popupImage);
+const popupWithImage = new PopupWithImage('.popup-image');
 popupWithImage.setEventListeners();
 function handleCardClick(name, link) {
   popupWithImage.open(name, link);
@@ -89,5 +89,3 @@ validationProfile.enableValidation();
 // Валидация попапа карточки
 const validationCard = new FormValidator(settings, popupCardForm);
 validationCard.enableValidation();
-
-export { handleCardClick };
