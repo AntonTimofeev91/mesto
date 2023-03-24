@@ -47,6 +47,7 @@
 .element__like{background-color:#fff;border:none;cursor:pointer;height:18px;outline:none;padding:0;transition:opacity .3s}.element__like:hover{opacity:.5}
 .element__like_active{background-image:url(images/like-active.75438e944a43e4c0b404.svg)}
 .element__remove-button{background-color:transparent;background-image:url(images/remove.a274c87c0f6b553b47ad.svg);background-position:50%;background-repeat:no-repeat;border:none;cursor:pointer;height:19.3px;left:240px;outline:none;position:absolute;top:20px;width:18px}.element__remove-button:hover{opacity:.6}
+.element__remove-button_deactive{opacity:0;pointer-events:none}
 .footer{color:#545454;font-family:Inter,Arial,sans-serif;font-size:18px;font-style:normal;font-weight:400;line-height:22px;margin:0 auto 60px;max-width:882px;width:69%}@media screen and (max-width:620px){.footer{font-size:14px;line-height:17px;margin:0 auto 36px;width:88%}}
 .footer__copyright{color:#545454;font-family:Inter,Arial,sans-serif;font-size:18px;font-style:normal;font-weight:400;line-height:22px;margin:0;padding:0}@media screen and (max-width:620px){.footer__copyright{font-size:14px;line-height:17px}}
 
