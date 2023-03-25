@@ -1,33 +1,49 @@
-import Popup from "./Popup.js";
+import Popup from './Popup.js'
 
 class PopupWithForm extends Popup {
-  constructor(popupSelector, handleFormSubmit) {
+  constructor(callbakSubmit, popupSelector) {
     super(popupSelector);
-    this._popupForm = this._popup.querySelector('.popup__form');
-    this._popupInput = Array.from(this._popupForm.querySelectorAll('.popup__input'));
-    this._handleFormSubmit = handleFormSubmit;
+    this._callbakSubmit = callbakSubmit;
+    this._form = this._popup.querySelector('.popup__form')
+    this._button = this._form.querySelector('.popup__button')
+    this._inputList = Array.from(this._form.querySelectorAll('.popup__input'));
+    this._buttonText = this._button.textContent;
+  }
+
+  setValueInputs({ data }) {
+    this._inputList.forEach((input) => {
+      input.value = data[input.name];
+    });
   }
 
   _getInputValues() {
-    this._data = {};
-    this._popupInput.forEach((input) => {
-      this._data[input.name] = input.value;
+    this._formValues = {};
+    this._inputList.forEach(input => {
+      this._formValues[input.name] = input.value;
     });
-    return this._data;
+    return this._formValues;
+  }
+
+  renderLoading(isLoading, loadingText = 'Сохранение...') {
+    if (isLoading) {
+      this._button.textContent = loadingText;
+    } else {
+      this._button.textContent = this._buttonText;
+    }
   }
 
   close() {
-    this._popupForm.reset();
+    this._form.reset();
     super.close();
   }
 
   setEventListeners() {
-    this._popupForm.addEventListener('submit', (evt) => {
+    this._form.addEventListener('submit', (evt) => {
       evt.preventDefault();
-      this._handleFormSubmit(this._getInputValues());
-      this.close();
+      this._callbakSubmit(this._getInputValues());
     });
     super.setEventListeners();
-  }
+  }   
 }
+
 export default PopupWithForm;

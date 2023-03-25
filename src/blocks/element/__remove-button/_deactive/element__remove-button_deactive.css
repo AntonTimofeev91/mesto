@@ -1,0 +1,4 @@
+.element__remove-button_deactive {
+  pointer-events: none;
+  opacity: 0;
+}

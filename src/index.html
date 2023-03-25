@@ -13,10 +13,15 @@
 
     <main>
       <section class="profile">
-        <img class="profile__avatar" src="<%=require('./images/avatar.jpg')%>" alt="Здесь должна быть картинка">
+        <div class="profile__avatar">
+          <img class="profile__avatar-image" src="<%=require('./images/avatar.jpg')%>" alt="Здесь должна быть картинка">
+          <div class="profile__avatar-overlay">
+            <img class="profile__avatar-edit" src="<%=require('./images/avatar-edit.svg')%>" alt="Иконка изменения профиля">
+          </div>
+        </div>
         <div class="profile__profile-info">
           <h1 class="profile__name">Жак-Ив Кусто</h1>
-          <p class="profile__job">Исследователь океана</p>
+          <p class="profile__about">Исследователь океана</p>
         </div>
         <button type="button" class="profile__edit-button">
           <img src="<%=require('./images/edit-button.svg')%>" alt="Здесь должна быть кнопка">
@@ -34,6 +39,7 @@
             <div class="element__info">
               <h2 class="element__name"></h2>
               <button class="element__like" type="button"><img src="<%=require('./images/like.svg')%>" alt="Здесь должна быть кнопка"></button>
+              <p class="element__like-count"></p>
             </div>
           </article>
         </template>
@@ -50,11 +56,11 @@
           <img src="<%=require('./images/close-icon.svg')%>" class="popup__close-icon" alt="Здесь должна быть кнопка закрытия">
         </button>
         <h2 class="popup-profile__title">Редактировать профиль</h2>
-        <form class="popup__form popup-profile__form" name="info">
+        <form class="popup__form popup-profile__form" name="editProfile">
             <input type="text" name="name" id="name-imput" class="popup__input popup-profile__input-info-name" placeholder="Имя" minlength="2" maxlength="40" required novalidate>
             <span class="popup__error name-imput-error"></span>
-            <input type="text" name="job" id="job-imput" class="popup__input popup-profile__input-info-job" placeholder="Профессия" minlength="2" maxlength="200" required novalidate>
-            <span class="popup__error job-imput-error"></span>
+            <input type="text" name="about" id="about-imput" class="popup__input popup-profile__input-info-about" placeholder="Профессия" minlength="2" maxlength="200" required novalidate>
+            <span class="popup__error about-imput-error"></span>
             <button type="submit" class="popup__button" disabled>Сохранить</button>
         </form>
       </div>
@@ -66,11 +72,11 @@
           <img src="<%=require('./images/close-icon.svg')%>" class="popup__close-icon" alt="Здесь должна быть кнопка закрытия">
         </button>
         <h2 class="popup-element__title">Новое место</h2>
-        <form class="popup__form popup-element__form" name="info">
+        <form class="popup__form popup-element__form" name="addElement">
             <input type="text" id="name-element-imput" class="popup__input popup-element__input-name" placeholder="Название" name="name" minlength="2" maxlength="30" required>
             <span class="popup__error name-element-imput-error"></span>
-            <input type="url" id="image-elemeny-imput" class="popup__input popup-element__input-image" placeholder="Ссылка на картинку" name="link" required>
-            <span class="popup__error image-elemeny-imput-error"></span>
+            <input type="url" id="image-element-imput" class="popup__input popup-element__input-image" placeholder="Ссылка на картинку" name="link" required>
+            <span class="popup__error image-element-imput-error"></span>
             <button type="submit" class="popup__button" disabled>Создать</button>
         </form>
       </div>
@@ -83,6 +89,30 @@
         </button>
         <img class="popup-image__picture" alt="Здесь должна быть увеличенная картинка">
         <h2 class="popup-image__name"></h2>
+      </div>
+    </div>
+
+    <div class="popup popup-avatar">
+      <div class="popup__container popup-avatar__container">
+        <button type="button" class="popup__close popup-avatar__close">
+          <img src="<%=require('./images/close-icon.svg')%>"  class="popup__close-icon" alt="Здесь должна быть кнопка закрытия">
+        </button>
+        <h2 class="form__title">Обновить аватар</h2>
+        <form class="popup__form popup-avatar__form" name="editAvatar">
+          <input type="url" id="avatar-imput" class="popup__input popup-avatar__input" placeholder="Ссылка на картинку" name="link" required>
+          <span class="popup__error avatar-imput-error"></span>
+          <button type="submit" class="popup__button">Сохранить</button>
+        </form>
+      </div>
+  </div>
+
+    <div class="popup popup-delete">
+      <div class="popup__container popup-delete__container">
+        <button type="button" class="popup__close popup-delete__close">
+            <img src="<%=require('./images/close-icon.svg')%>" class="popup__close-icon" alt="Здесь должна быть кнопка закрытия">
+        </button>
+        <h2 class="popup-delete__title">Вы уверены?</h3>
+        <button type="submit" class="popup__button">Да</button>
       </div>
     </div>
   
